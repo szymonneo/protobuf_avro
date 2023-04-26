@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package protobuf;
+
+option java_multiple_files = true;
+option java_package = "com.szymon_kaluza.protobuf.proto.model";
+option java_outer_classname = "LibraryProtos";
+
+message Author {
+  optional string name = 1;
+  optional string surname = 2;
+  optional string nationality = 3;
+}
+
+message Book {
+  optional string title = 1;
+  optional Author author = 2;
+  optional int64 pages = 3;
+  optional bool available = 4;
+}
+
+message Library {
+  optional string address = 1;
+  repeated Book books = 2;
+}
