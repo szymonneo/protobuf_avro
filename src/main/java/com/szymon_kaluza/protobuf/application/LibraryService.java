@@ -14,4 +14,8 @@ public class LibraryService {
     public Library deserialize(byte[] serializedLibrary) throws InvalidProtocolBufferException {
         return Library.parseFrom(serializedLibrary);
     }
+
+    public void printSerializedSize(Library library) {
+        System.out.printf("Serialized library with book count: %s has size: %s%n", library.getBooksList().size(), serialize(library).length);
+    }
 }

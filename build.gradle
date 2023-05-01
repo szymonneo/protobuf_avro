@@ -15,14 +15,11 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+
     implementation 'com.google.protobuf:protobuf-java:3.22.3'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.openjdk.jmh:jmh-core:1.36'
     testImplementation 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
-    jmhAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
+    testAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
 }

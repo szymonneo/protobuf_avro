@@ -50,4 +50,36 @@ public class BenchmarkDataFactory {
     public static int getRandomInt() {
         return (int) ((Math.random() * (13 - 3)) + 3);
     }
+
+    public static Library getFixedLibrary(List<Book> books) {
+        return Library.newBuilder()
+                .setAddress("address")
+                .addAllBooks(books)
+                .build();
+    }
+
+    public static List<Book> getManyFixedBooks(int numberOfBooks) {
+        List<Book> books = new ArrayList<>();
+        for (int i = 0; i < numberOfBooks; i++) {
+            books.add(getFixedBook(i));
+        }
+        return books;
+    }
+
+    public static Book getFixedBook(int index) {
+        return Book.newBuilder()
+                .setTitle("title" + index)
+                .setAuthor(getFixedAuthor(index))
+                .setPages(index)
+                .setAvailable(true)
+                .build();
+    }
+
+    public static Author getFixedAuthor(int index) {
+        return Author.newBuilder()
+                .setName("name" + index)
+                .setSurname("surname" + index)
+                .setNationality("nationality" + index)
+                .build();
+    }
 }
