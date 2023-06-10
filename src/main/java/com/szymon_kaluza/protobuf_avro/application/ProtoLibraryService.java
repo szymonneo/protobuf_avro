@@ -1,11 +1,9 @@
-package com.szymon_kaluza.protobuf.application;
+package com.szymon_kaluza.protobuf_avro.application;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.szymon_kaluza.protobuf.proto.model.Library;
-import org.springframework.stereotype.Service;
+import com.szymon_kaluza.protobuf_avro.proto.model.Library;
 
-@Service
-public class LibraryService {
+public class ProtoLibraryService {
 
     public byte[] serialize(Library library) {
         return library.toByteArray();

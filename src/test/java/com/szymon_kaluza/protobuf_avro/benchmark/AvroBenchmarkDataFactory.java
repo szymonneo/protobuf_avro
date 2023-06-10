@@ -1,20 +1,20 @@
-package com.szymon_kaluza.protobuf.benchmark;
+package com.szymon_kaluza.protobuf_avro.benchmark;
 
-import com.szymon_kaluza.protobuf.proto.model.Author;
-import com.szymon_kaluza.protobuf.proto.model.Book;
-import com.szymon_kaluza.protobuf.proto.model.Library;
+import com.szymon_kaluza.protobuf_avro.avro.model.Author;
+import com.szymon_kaluza.protobuf_avro.avro.model.Book;
+import com.szymon_kaluza.protobuf_avro.avro.model.Library;
 import net.bytebuddy.utility.RandomString;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BenchmarkDataFactory {
+public class AvroBenchmarkDataFactory {
 
     public static Library getLibrary(List<Book> books) {
         return Library.newBuilder()
                 .setAddress(getRandomString())
-                .addAllBooks(books)
+                .setBooks(books)
                 .build();
     }
 
@@ -54,7 +54,7 @@ public class BenchmarkDataFactory {
     public static Library getFixedLibrary(List<Book> books) {
         return Library.newBuilder()
                 .setAddress("address")
-                .addAllBooks(books)
+                .setBooks(books)
                 .build();
     }
 
@@ -70,7 +70,7 @@ public class BenchmarkDataFactory {
         return Book.newBuilder()
                 .setTitle("title" + index)
                 .setAuthor(getFixedAuthor(index))
-                .setPages(index)
+                .setPages((long) index)
                 .setAvailable(true)
                 .build();
     }

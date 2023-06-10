@@ -1,7 +1,5 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.0.5'
-    id 'io.spring.dependency-management' version '1.1.0'
     id 'me.champeau.jmh' version '0.6.8'
 }
 
@@ -14,11 +12,14 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'net.bytebuddy:byte-buddy:1.14.5'
+    implementation 'org.slf4j:slf4j-simple:2.0.7'
 
     implementation 'com.google.protobuf:protobuf-java:3.22.3'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.apache.avro:avro:1.11.1'
+    implementation 'org.apache.avro:avro-compiler:1.11.1'
+
     testImplementation 'org.openjdk.jmh:jmh-core:1.36'
     testImplementation 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
     testAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.36'

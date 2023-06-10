@@ -1,0 +1,84 @@
+{
+  "type": "record",
+  "name": "Library",
+  "namespace": "com.szymon_kaluza.protobuf_avro.avro.model",
+  "fields": [
+    {
+      "name": "address",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "books",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Book",
+          "fields": [
+            {
+              "name": "title",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "author",
+              "type": {
+                "type": "record",
+                "name": "Author",
+                "fields": [
+                  {
+                    "name": "name",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "surname",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "nationality",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  }
+                ]
+              }
+            },
+            {
+              "name": "pages",
+              "type": [
+                "null",
+                "long"
+              ],
+              "default": null
+            },
+            {
+              "name": "available",
+              "type": [
+                "null",
+                "boolean"
+              ],
+              "default": null
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
