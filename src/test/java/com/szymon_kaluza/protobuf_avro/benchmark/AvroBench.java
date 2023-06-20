@@ -53,44 +53,6 @@ public class AvroBench {
     }
 
     @Benchmark
-    @Warmup(iterations = 3, time = 3)
-    @Fork(3)
-    @Measurement(iterations = 100, time = 3)
-    @BenchmarkMode(Mode.AverageTime)
-    public void serializeSmallAverageTime(SmallLibrary input) {
-        libraryService.serialize(input.library);
-    }
-
-    @Benchmark
-    @Warmup(iterations = 3, time = 3)
-    @Fork(3)
-    @Measurement(iterations = 100, time = 3)
-    @BenchmarkMode(Mode.AverageTime)
-    public void serializeBigAverageTime(BigLibrary input) {
-        libraryService.serialize(input.library);
-    }
-
-    @Benchmark
-    @Warmup(iterations = 3, time = 3)
-    @Fork(3)
-    @Measurement(iterations = 100, time = 3)
-    @BenchmarkMode(Mode.AverageTime)
-    public void serializeAndDeserializeSmallAverageTime(SmallLibrary input, Blackhole blackhole) {
-        byte[] serialized = libraryService.serialize(input.library);
-        blackhole.consume(libraryService.deserialize(serialized));
-    }
-
-    @Benchmark
-    @Warmup(iterations = 3, time = 3)
-    @Fork(3)
-    @Measurement(iterations = 100, time = 3)
-    @BenchmarkMode(Mode.AverageTime)
-    public void serializeAndDeserializeBigAverageTime(BigLibrary input, Blackhole blackhole) {
-        byte[] serialized = libraryService.serialize(input.library);
-        blackhole.consume(libraryService.deserialize(serialized));
-    }
-
-    @Benchmark
     @Warmup(iterations = 0)
     @Fork(0)
     @Measurement(iterations = 1)
